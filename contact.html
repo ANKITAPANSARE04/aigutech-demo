@@ -40,10 +40,33 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+      #google_translate_element select {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+      }
+    </style>
   </head>
 
   <body>
     <!-- Spinner Start -->
+    <div
+      id="google_translate_element"
+      class="position-absolute top-0"
+      style="right: 0"
+    ></div>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <div
       id="spinner"
       class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
